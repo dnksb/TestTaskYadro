@@ -11,6 +11,7 @@ std::vector<Table> tables;
 
 void init_tables(int amount_table);
 void interpreter(std::string line);
+std::vector<std::string> split(std::string line);
 
 int main(int argc, char* argv[])
 {
@@ -42,7 +43,6 @@ int main(int argc, char* argv[])
     try
     {
         fin >> amount_table;
-        std::cout << amount_table << std::endl;
         fin >> time;
         time_start.set_time(time);
         fin >> time;
@@ -86,5 +86,24 @@ void init_tables(int amount_table)
 
 void interpreter(std::string line, std::vector<Table> &tables)
 {
+    auto commands = split(line);
+}
 
+std::vector<std::string> split(std::string line)
+{
+    char str[line.length() + 1];
+
+    for (int x = 0; x < sizeof(str); x++) {
+        str[x] = line[x];
+    }
+
+    auto commands = std::vector<std::string>();
+    char *token = strtok(str, " ");
+
+    while(token != NULL)
+    {
+        commands.insert(, std::to_string(token));
+        token = strtok(NULL, " ");
+    }
+    return commands;
 }
