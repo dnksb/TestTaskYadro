@@ -11,7 +11,7 @@ namespace test
     {
         bool free;
         Client client;
-        time::Time time_use;
+        Time time_use;
 
     };
 }

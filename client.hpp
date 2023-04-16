@@ -8,8 +8,8 @@ namespace test
 {
     class Client
     {
-        time::Time time_start;
-        time::Time time_end;
+        Time time_start;
+        Time time_end;
 
     };
 }
