@@ -2,6 +2,8 @@
 #define TABLE_HPP
 #include <iostream>
 #include <tuple>
+#include "client.hpp"
+#include "time.hpp"
 
 namespace test
 {
@@ -9,7 +11,7 @@ namespace test
     {
         bool free;
         Client client;
-        std::tuple<int, int> time_use;
+        time::Time time_use;
 
     };
 }

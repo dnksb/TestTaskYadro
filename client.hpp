@@ -2,13 +2,14 @@
 #define CLIENT_HPP
 #include <iostream>
 #include <tuple>
+#include "time.hpp"
 
 namespace test
 {
     class Client
     {
-        std::tuple<int, int> time_start;
-        std::tuple<int, int> time_end;
+        time::Time time_start;
+        time::Time time_end;
 
     };
 }
