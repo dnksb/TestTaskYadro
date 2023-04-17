@@ -119,3 +119,11 @@ std::string Time::output() const
 {
     return std::to_string(this->get_hour()) + ":" + std::to_string(this->get_minute());
 }
+
+int Time::floor()
+{
+    if(this->get_minute() > 0)
+        return this->get_hour() + 1;
+    else
+        return this->get_hour();
+}

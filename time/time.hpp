@@ -29,6 +29,8 @@ class Time
         void set_time(int hour, int minute);
         void set_time(std::string time);
 
+        int floor();
+
         std::string output() const;
 };
 
