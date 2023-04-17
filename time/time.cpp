@@ -117,7 +117,14 @@ bool Time::operator>(const Time& other) const
 
 std::string Time::output() const
 {
-    return std::to_string(this->get_hour()) + ":" + std::to_string(this->get_minute());
+    std::string result = "";
+    if(this->get_hour() < 10)
+        result += "0";
+        result += std::to_string(this->get_hour()) + ":";
+    if(this->get_minute() < 10)
+        result += "0";
+        result += std::to_string(this->get_minute());
+    return result;
 }
 
 int Time::floor()
