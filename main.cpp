@@ -106,7 +106,7 @@ void interpreter(std::string line)
 
     auto time = (*commands)[0];
     auto num_operation = atoi((*commands)[1].c_str());
-    auto client_name = (*commands)[0];
+    auto client_name = (*commands)[2];
 
     if(Time(time) < time_start)
     {
@@ -123,7 +123,7 @@ void interpreter(std::string line)
         client_sat(time, client_name, atoi((*commands)[3].c_str()));
         break;
     case 3:
-
+        
         break;
     case 4:
 
@@ -174,9 +174,10 @@ Client* find_client(std::string client_name)
 {
     for (int i = 0; i < clients.size(); i++)
     {
-        std::cout << clients[i].get_name() << std::endl;
         if  (clients[i].get_name() == client_name)
-            return& clients[i];
+            {
+                return& clients[i];
+            }
     }
     return nullptr;
 }

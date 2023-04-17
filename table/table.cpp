@@ -14,5 +14,6 @@ bool Table::get_status() const
 
 void Table::set_client(Client* client)
 {
+    std::cout << client->get_name() << std::endl;
     this->client = client;
 }
